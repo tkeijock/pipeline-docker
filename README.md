@@ -5,9 +5,16 @@ This setup solved a real issue I faced: I needed to build Docker images, but I d
 
 By moving the build process to GitHub Actions, I can create images directly in the cloud and keep them available online, making distribution and deployment much simpler.
 
+The default Docker Hub repository is:
+
+https://hub.docker.com/repository/docker/tkeijock/apache_imp
+
+Note: Docker Hub repository location can be altered by changing ```secret.docker_repo``` inside Github Actions.
+
 This project reuses the Dockerfile from my other repository, applying those best practices here to build and publish the image:
 
 https://github.com/tkeijock/dockerfile-best-practices
+
 
 # 1- Overview
 
