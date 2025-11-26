@@ -28,7 +28,3 @@ jobs:
         ${{ secrets.DOCKERHUB_USERNAME }}/meuapp:${{ github.sha }}
       cache-from: type=registry,ref=${{ secrets.DOCKERHUB_USERNAME }}/meuapp:latest
       cache-to: type=registry,ref=${{ secrets.DOCKERHUB_USERNAME }}/meuapp:latest,mode=max
-  
-        - name: Push Docker image
-          run: |
-          docker push meu-usuario/meu-apache:latest
