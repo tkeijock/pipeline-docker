@@ -3,14 +3,14 @@ name: Build and Push Docker Image
 on:
   push:
     branches:
-      - main  
+      - main
 
 jobs:
   build:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout repo
+      - name: Checkout repository
         uses: actions/checkout@v4
 
       - name: Log in to Docker Hub
@@ -19,12 +19,13 @@ jobs:
           username: ${{ secrets.DOCKER_USERNAME }}
           password: ${{ secrets.DOCKER_PASSWORD }}
 
-  - name: Build and push image
-    uses: docker/build-push-action@v6
-    with:
-      push: true
-      tags: |
-        ${{ secrets.DOCKERHUB_USERNAME }}/meuapp:latest
-        ${{ secrets.DOCKERHUB_USERNAME }}/meuapp:${{ github.sha }}
-      cache-from: type=registry,ref=${{ secrets.DOCKERHUB_USERNAME }}/meuapp:latest
-      cache-to: type=registry,ref=${{ secrets.DOCKERHUB_USERNAME }}/meuapp:latest,mode=max
+      - name: Build and Push Docker image
+        uses: docker/build-push-action@v6
+        with:
+          context: .
+          push: true
+          tags: |
+            ${{ secrets.DOCKER_USERNAME }}/meuapp:latest
+            ${{ secrets.DOCKER_USERNAME }}/meuapp:${{ github.sha }}
+          cache-from: type=registry,ref=${{ secrets.DOCKER_USERNAME }}/meuapp:latest
+          cache-to: type=registry,ref=${{ secrets.DOCKER_USERNAME }}/meuapp:latest,mode=max
