@@ -29,7 +29,7 @@ This repository uses a Docker build workflow located at:
 To trigger the pipeline manually, open the Actions tab in this repository and select the workflow named "Build and Push Docker Image" from the list on the left.
 On the workflow page, click the arrow beside "Run workflow" to expand the options, then press the **green Run workflow button** to start the process.
 
- https://github.com/tkeijock/pipeline-docker/actions
+ https://github.com/tkeijock/docker-build-ci/actions
 
 ## 1.2 Expected Results
 
