@@ -1,4 +1,4 @@
-# pipeline-docker
+# Docker Build CI
 In this repository, I use GitHub Actions to automatically build a Docker image from a Dockerfile and push it to Docker Hub. 
 
 This setup solved a real issue I faced: I needed to build Docker images, but I didn’t always have access to machines where Docker could be installed.
